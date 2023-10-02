@@ -1,0 +1,74 @@
+
+ <!-----------Interpolation-------------------- -->
+ <h1 style="color:red">Interpolation</h1>
+<h3>{{name}}</h3>
+
+
+<!-- ----------------------Property Binding------------ -->
+<h1 style="color:red">Property Binding</h1>
+<input type ="text" [id]="courseId" value="Angular 10"><br>
+<input type="text" id="{{courseId}}" [disabled]="false">
+
+<!----------------- Class Bidning ------------------------->
+<h1 style="color:red">Class Binding</h1>
+<h5 class="TextColor"> Class Binding</h5>
+<h5 [class]="myText">Class Binding-1</h5>
+<h5 [class]="myStyle">Italic style</h5>
+<h5 [class.TextStyle]="required">italic </h5>
+<h5 [ngClass]="Group">ngClass Binding</h5>
+
+<!---------------------- STYLE BINDING--------->
+<h1 style="color:red">Style Binding</h1>
+<h5 [style.color]="'blue'">Style binding</h5>
+<h5 [style.color]="myColor">Style binding-1</h5>
+<h5 [style.color]="required? 'green':'red'">Conditinal style color</h5>
+<h5 [ngStyle]="myStyles">NgStyleBinding</h5>
+
+
+<!----------- EVENT BINDING ---------->
+<h1 style="color:red">Event Binding </h1>
+<button (click)="onClick()" type="button">click</button>
+<h6>{{greetings}}</h6>
+
+<!--------TEMPLATE REFERNCE------>
+<h1 style="color:red">Template Reference</h1>
+<input  #msg type="text">
+<button (click)="message(msg.value)" type="button">Welcome</button>
+
+<!-----------TWO WAY DATA BINDING------------>
+<h1 style="color:red">Two Way DataBidning</h1>
+<input [(ngModel)] =data type="text">
+<button type="button">Click me</button>
+
+{{data}}
+
+<!----NG IF -IFElse DIRECTIVE-->
+<h1 style="color:red">NgIf and NgIfElse </h1>
+<h5 *ngIf="status;then trueBlock else elseBlock">Welcome  {{name}}</h5>
+<ng-template #elseBlock>
+ Welcome to Else Block
+</ng-template>
+<ng-template #trueBlock>
+    Welcome to True Block
+   </ng-template>
+
+<!---------- NG Switch -------------------->
+<h1 style="color:red">Ng Switch</h1>
+<div [ngSwitch]="myChoice">
+    <div class="switchCase">
+        <div *ngSwitchCase="'one'">First Block</div>
+        <div *ngSwitchCase="'two'">Second Block</div>
+        <div *ngSwitchCase="'three'">Third Block</div>
+        <div *ngSwitchDefault>Invalid Choice</div>
+    </div>
+</div>
+<!------ Ng For --------------->
+<h1 style="color:red">Ng For </h1>
+<div *ngFor ="let student of students;index as i" >
+    <h5>{{i}}-{{student}}</h5>
+
+</div>
+<!----- component interactin input and output----------->
+<h1 style="color:red">Input and output </h1>
+<h5>{{parent}}</h5>
+<button (click)="fireEvent()">Click me</button>

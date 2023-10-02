@@ -1,0 +1,8 @@
+<h2>CourseList Component</h2>
+
+<ul class="items">
+    <button (click)="onSelect(c)" [class.selected]="isSelected(c)"  *ngFor="let c of course">
+       
+        <span class="badge">{{c.id}}</span>{{c.name}}
+    </button>
+</ul>

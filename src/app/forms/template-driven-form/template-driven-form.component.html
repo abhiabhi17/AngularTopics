@@ -1,0 +1,57 @@
+<h1 style="color:red">Template DrivenForms</h1>
+<br>
+<form #myForm="ngForm"> 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="username" name="username" required
+                ngModel [(ngModel)]="userModel.name" #username="ngModel" [class.is-invalid]="username.invalid && username.touched">
+       <small  class="text-danger" [class.d-none]="username.valid || username.touched">Name is required</small>
+            </div>
+               <br>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="email" name="email" required
+                ngModel [(ngModel)]="userModel.email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                 <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is Required</small>
+            </div><br>
+            <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Designation" name="designation" #designation="ngModel" [(ngModel)]="userModel.designation">
+
+            </div>
+        </div>
+        <div class="col-6">
+            
+              <div class="form-group">
+                 <input type="radio" name="male" value="male" ngModel  [(ngModel)]="userModel.gender">
+                 <label for="male">Male</label>
+                 <input type="radio" name="female" value="female" ngModel [(ngModel)]="userModel.gender">
+                 <label for="female">Female</label>
+              </div>
+               <br>
+              <div class="form-group">
+              <select class="form-select" aria-label="Default select example" name="course" ngModel [(ngModel)]="userModel.course">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let c of course">{{c}}</option>
+               
+              </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="checkbox" id="Rememberme" name="remember" value="rememberme" checked [(ngModel)]="userModel.remember">
+                <label for="rememberme">Remember Me</label><br>
+            </div>
+        </div>
+        
+    </div><br>
+    <button type="button" class="btn btn-primary">Register</button>
+</div>
+</form>
+<br>
+<div class="myFormData">
+
+    {{myForm.value | json}}
+</div>
+<div class="myFormData">
+{{userModel | json}}
+</div>

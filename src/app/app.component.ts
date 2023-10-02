@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularTopics';
+
+  parentMsg:string="This is Parent Component (app component message)";
+  msg:String | undefined;
 }
