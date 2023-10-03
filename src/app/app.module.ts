@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule, myRoutings } from './app-routing.module';
@@ -9,10 +9,11 @@ import { CourseDetailsComponent } from './routings/course-details/course-details
 import { CourseDurationComponent } from './routings/course-duration/course-duration.component';
 import { CourseFeeComponent } from './routings/course-fee/course-fee.component';
 import { AdminHomeComponent } from './routings/admin-home/admin-home.component';
-import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
-import { AbcComponent } from './abc/abc.component';
+
 import { User } from './forms/user';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
+import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
 
 
 @NgModule({
@@ -25,14 +26,17 @@ import { FormsModule } from '@angular/forms';
     CourseFeeComponent,
     AdminHomeComponent,
     TemplateDrivenFormComponent,
-    AbcComponent,
+    ReactiveFormsComponent
+ 
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

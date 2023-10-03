@@ -1,13 +1,13 @@
 <h1 style="color:red">Template DrivenForms</h1>
 <br>
-<form #myForm="ngForm"> 
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)"> 
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="username" name="username" required
                 ngModel [(ngModel)]="userModel.name" #username="ngModel" [class.is-invalid]="username.invalid && username.touched">
-       <small  class="text-danger" [class.d-none]="username.valid || username.touched">Name is required</small>
+       <small class="text-danger" [class.d-none]="username.valid || username.untouched">Name is required</small>
             </div>
                <br>
             <div class="form-group">
@@ -16,8 +16,8 @@
                  <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is Required</small>
             </div><br>
             <div class="form-group">
-                <input type="tel" class="form-control" placeholder="Designation" name="designation" #designation="ngModel" [(ngModel)]="userModel.designation">
-
+                <input type="tel" class="form-control" placeholder="Designation" name="designation" #designation="ngModel" [(ngModel)]="userModel.designation" required>
+                <small class="text-danger" [class.d-none]="designation.valid || designation.untouched">Designation is Required</small>
             </div>
         </div>
         <div class="col-6">
@@ -30,11 +30,14 @@
               </div>
                <br>
               <div class="form-group">
-              <select class="form-select" aria-label="Default select example" name="course" ngModel [(ngModel)]="userModel.course">
-                <option selected>Open this select menu</option>
+              <select  (blur)="ValidateCourse(myCourse.value)" 
+                        (change)="ValidateCourse(myCourse.value)" 
+                        required #myCourse="ngModel"   name="myCourse" ngModel 
+              [(ngModel)]="userModel.course" [class.is-invalid]="courseHasError && myCourse.touched">
+                <option value="default">Open this select menu</option>
                 <option *ngFor="let c of course">{{c}}</option>
-               
               </select>
+              <small class="text-danger" [class.d-none]="!courseHasError && myCourse.untouched">Please select the course</small>
             </div>
             <br>
             <div class="form-group">
@@ -44,7 +47,7 @@
         </div>
         
     </div><br>
-    <button type="button" class="btn btn-primary">Register</button>
+    <button [disabled]="myForm.form.invalid || courseHasError" type="button" class="btn btn-primary">Register</button>
 </div>
 </form>
 <br>

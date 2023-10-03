@@ -10,8 +10,22 @@ export class TemplateDrivenFormComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-  userModel=new User('abhi','abhi@@gmail.com','deeveloper','male','',true);
- 
+  userModel=new User('abhi','abhi@@gmail.com','deeveloper','male','default',true);
+  courseHasError=true;
   course=['Angular','Spring','SpringBoot','Microservices'];
+  ValidateCourse(value:any)
+  {
+    if(value === 'default')
+    {
+      this.courseHasError=true;
+    }
+    else{
+      this.courseHasError=false;
+    }
+  }
+  onSubmit(value:any)
+  {
+    console.log(this.userModel);
+  }
 
 }

@@ -28,3 +28,13 @@ nav a {
     color:  #ce2b2b;
     background-color: #49ce0c;
   }
+
+  /* Styles for Reactive forms  */
+  .my-background{
+    border: 0;
+    padding: 0;
+    background-size: cover;
+    font-family: play;
+    width: 100%;
+    height: 625px;
+  }
