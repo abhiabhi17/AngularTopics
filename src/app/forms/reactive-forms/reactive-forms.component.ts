@@ -48,8 +48,10 @@ constructor(private fb:FormBuilder){}
   //     }
   //   );
   // }
+
+  //--------------------------------FORMBUILDER-------------------------//
   registrationForm=this.fb.group({
-      userName:['abhi',[Validators.required,Validators.minLength(3)],nameValidator],
+      userName:['abhi',[Validators.required,Validators.minLength(3),nameValidator(/admin/)]], // admin username is not allowed
       password:[''],
       confirmPassword:[''],
       address:this.fb.group({
@@ -64,7 +66,7 @@ constructor(private fb:FormBuilder){}
   {
     this.registrationForm.patchValue(
       {
-        userName: 'testUser',
+       
         password: 'testPassword',
         confirmPassword: 'testPassword',
        
