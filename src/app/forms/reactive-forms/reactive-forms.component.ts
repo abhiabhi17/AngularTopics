@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidator } from 'src/app/customvalidators/password.validator';
 import { nameValidator } from 'src/app/customvalidators/user-name.validator';
 
 @Component({
@@ -58,10 +59,9 @@ constructor(private fb:FormBuilder){}
         city:[''],
         state:[''],
         pincode:['']
-
-      })
-
-  })
+     })
+      
+  },{validator:PasswordValidator});
   displayValues()
   {
     this.registrationForm.patchValue(
