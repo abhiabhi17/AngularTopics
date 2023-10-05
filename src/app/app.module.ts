@@ -14,7 +14,9 @@ import { User } from './forms/user';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.component';
-
+import { HttpCurdComponent } from './HttpRequests/http-curd/http-curd.component';
+import {HttpClientModule} from '@angular/common/http'
+import { ProductService } from './HttpRequests/service/products.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     CourseFeeComponent,
     AdminHomeComponent,
     TemplateDrivenFormComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    HttpCurdComponent
  
     
     
@@ -35,10 +38,11 @@ import { ReactiveFormsComponent } from './forms/reactive-forms/reactive-forms.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
