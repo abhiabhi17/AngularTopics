@@ -1,0 +1,49 @@
+<div class="main-area">
+    <div class="content-area">
+       <div class="header">
+           <h1>Employees SpringBootIntegration</h1>
+           <hr>
+       </div>
+    </div>
+    <div class="container">
+        <div class="form-area">
+            <h3>Create Employee</h3>
+            <form #employeesForm="ngForm" (ngSubmit)="onEmployeeCreate(employeesForm.value)">
+             <label>Employee Name</label>
+             <input type="text" name="firstName" ngModel>
+             <br><br>
+             <label>Employee LastName</label>
+             <input type="text" name="lastName" ngModel>
+             <br><br>
+             <label>Employee Email</label>
+             <input type="text" name="email" ngModel>
+             <br><br>
+             <input type="submit" value="{{editMode?'updateEmployee':'AddEmployee'}}">
+
+            </form>
+        </div>
+    </div>
+    <div class="employe=display-area">
+        <h3> All Employees</h3>
+        <table id="employees">
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+            </tr>
+            <tr *ngFor="let emp of allEmployees;">
+                <td>{{emp.id}}</td>
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.email}}</td>
+                <td><button class="btn-delete" (click)="onDeleteEmployee(emp.id)">Delete</button></td>
+                <td><button class="btn-delete" (click)="onEditEmployeEmployee(emp.id)">Edit</button></td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div>
+        <button class="btn-fetch" (click)="onEmployeesFetch()">FetchEmployees</button>
+        <button class="btn-fetch" (click)="deleteEmployees()">DeleteEmployees</button>
+    </div>

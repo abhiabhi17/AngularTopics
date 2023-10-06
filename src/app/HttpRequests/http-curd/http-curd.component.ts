@@ -72,7 +72,7 @@ export class HttpCurdComponent  implements OnInit,OnDestroy{
     this.currentProductId=id;
     //Get the product id
      let currentProduct=this.allProducts.find((p)=>{return p.id === id});
-     let currentP=this.allProducts.find((p)=>{return p.id===id});
+     //let currentP=this.allProducts.find((p)=>{return p.id===id});
      //console.log(currentProduct);
 
     //populate the form

@@ -18,6 +18,10 @@ import { HttpCurdComponent } from './HttpRequests/http-curd/http-curd.component'
 import {HttpClientModule} from '@angular/common/http'
 import { ProductService } from './HttpRequests/service/products.service';
 
+
+import { EmployeeService } from './springbootIntegration/service/employee.service';
+import { SpringIntegrationComponent } from './springbootIntegration/components/spring-integration/spring-integration.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,9 @@ import { ProductService } from './HttpRequests/service/products.service';
     AdminHomeComponent,
     TemplateDrivenFormComponent,
     ReactiveFormsComponent,
-    HttpCurdComponent
+    HttpCurdComponent,
+    SpringIntegrationComponent,
+   
  
     
     
@@ -42,7 +48,7 @@ import { ProductService } from './HttpRequests/service/products.service';
     HttpClientModule
     
   ],
-  providers: [ProductService],
+  providers: [ProductService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
