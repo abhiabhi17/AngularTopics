@@ -1,6 +1,6 @@
 export class Employee
 {
-    id:string |any;
+    id:number |any;
     email:string |any;
     firstName:string |any;
     lastName:string |any;

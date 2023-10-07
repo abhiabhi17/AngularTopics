@@ -41,10 +41,10 @@ export class EmployeeService implements OnInit
     }
     //-----Delete by id-----------
 
-    deleteEmployeeById(id:string)
+    deleteEmployeeById(id:number)
     {
         
-        this.httpClient.delete(`${this.baseUrl}/delete/`+id).subscribe();
+        this.httpClient.delete(`${this.baseUrl}/delete/${id}`).subscribe();
     }
 
     //--- Delete all Employees-----

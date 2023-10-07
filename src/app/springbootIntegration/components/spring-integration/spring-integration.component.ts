@@ -44,7 +44,7 @@ export class SpringIntegrationComponent  implements OnInit{
 
     });
   }
-  onDeleteEmployee(id:string)
+  onDeleteEmployee(id:number)
   {
     this.employeeService.deleteEmployeeById(id);
   }
