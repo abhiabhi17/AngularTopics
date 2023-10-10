@@ -26,6 +26,10 @@ import { ChildComponent } from './contentChild/child/child/child.component';
 import { TestComponent } from './contentChild/test/test.component';
 import { ParentCompComponent } from './@Input@output/parentComp/parent-comp/parent-comp.component';
 import { ChildCompComponent } from './@Input@output/childComp/child-comp/child-comp.component';
+import { DemoComponent } from './CustomDirectives/demo/demo.component';
+import { SetBackground } from './CustomDirectives/SetBackground.directive';
+import { HighlightDirective } from './CustomDirectives/highlight.directive';
+import { AppHoverDirective } from './CustomDirectives/app-hover.directive';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { ChildCompComponent } from './@Input@output/childComp/child-comp/child-c
     TestComponent,
     ParentCompComponent,
     ChildCompComponent,
+    DemoComponent,
+    SetBackground,
+    HighlightDirective,
+    AppHoverDirective
    
  
     
