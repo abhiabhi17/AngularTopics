@@ -1,0 +1,15 @@
+<div>
+<app-child>
+    <h2>Information from  Parent Component With Child ng-Content</h2>
+    <p #para>This is paragraph This is paragraphThis is paragraphThis is paragraphThis is paragraphThis is paragraph
+        (ng-content)
+    </p>
+    <p #para>This is paragrapgh-2
+        (ng-content)
+    </p>
+   <app-test [name]="'abhi'"></app-test>
+   <app-test [name]="'abhishek'"></app-test>
+   <app-test [name]="'raj'"></app-test>
+</app-child>
+<button (click)="ParentButton()">Parent Button(viewChild)</button>
+</div>

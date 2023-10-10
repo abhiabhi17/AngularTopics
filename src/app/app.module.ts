@@ -21,6 +21,9 @@ import { ProductService } from './HttpRequests/service/products.service';
 
 import { EmployeeService } from './springbootIntegration/service/employee.service';
 import { SpringIntegrationComponent } from './springbootIntegration/components/spring-integration/spring-integration.component';
+import { ParentComponent } from './contentChild/parent/parent/parent.component';
+import { ChildComponent } from './contentChild/child/child/child.component';
+import { TestComponent } from './contentChild/test/test.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { SpringIntegrationComponent } from './springbootIntegration/components/s
     ReactiveFormsComponent,
     HttpCurdComponent,
     SpringIntegrationComponent,
+    ParentComponent,
+    ChildComponent,
+    TestComponent,
    
  
     
