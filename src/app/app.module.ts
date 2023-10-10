@@ -24,6 +24,8 @@ import { SpringIntegrationComponent } from './springbootIntegration/components/s
 import { ParentComponent } from './contentChild/parent/parent/parent.component';
 import { ChildComponent } from './contentChild/child/child/child.component';
 import { TestComponent } from './contentChild/test/test.component';
+import { ParentCompComponent } from './@Input@output/parentComp/parent-comp/parent-comp.component';
+import { ChildCompComponent } from './@Input@output/childComp/child-comp/child-comp.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { TestComponent } from './contentChild/test/test.component';
     ParentComponent,
     ChildComponent,
     TestComponent,
+    ParentCompComponent,
+    ChildCompComponent,
    
  
     
